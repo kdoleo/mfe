@@ -1,3 +1,5 @@
+const HTMLWebpackPlugin = require('html-webpack-plugin'); //allows to generate html file
+
 module.exports = {
     module: {
         rules: [
@@ -13,6 +15,11 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './public/index.html'
+        }),
+    ]
 
 }
