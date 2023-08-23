@@ -9,6 +9,7 @@ const prodConfig = {
     mode: 'production', //minify js files and optimizations and take longer to build 
     output: {
         filename: '[name].[contenthash].js', //all files built will use this as a name template - caching issues
+        publicPath: '/container/latest/'
     },
     plugins: [
         new ModuleFederationPlugin({
