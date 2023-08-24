@@ -7,12 +7,12 @@ const prodConfig = {
     mode: 'production', //minify js files and optimizations and take longer to build
     output: {
         filename: '[name].[contenthash].js', //all files built will use this as a name template - caching issues
+        publicPath: '/marketing/latest/',
     },
     plugins: [
         new ModuleFederationPlugin({
             name: 'marketing',
             filename: 'remoteEntry.js',
-            publicPath: '/marketing/latest/',
             exposes: {
                 './MarketingApp': './src/bootstrap'
             },
